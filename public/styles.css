@@ -1,5 +1,6 @@
 body {
-    font-family: "Raleway", sans-serif;
+    font-family: 'VistaSansOT-Bold', sans-serif;
+    src: url('C:\Users\Tuan Le\OneDrive\Desktop\code projects\leetcode-tracker\VistaSansOT-Bold.ttf');
     background-color: #fdffff;
     color: #333;
     text-align: center;
@@ -173,7 +174,7 @@ h1 {
 
 .planned-container h2 {
     font-size: 60px;
-    margin-top: 100px;
+    margin-top: 190px;
     padding-bottom: 10px;
 }
 
