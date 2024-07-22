@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEETCODE TRACKER</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <h1>LEETCODE TRACKER.</h1>
+        <div class="progress">
+            <div class="progress-fill"></div>
+            <span class="progress-text">0</span>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="daily-container">
+            <div class="day-arrows-container">
+                <div class="left-arrow"><</div>
+                <div class="right-arrow">></div>
+            </div>
+            <h1 id="daily-count">
+                <!-- heading inserted depending on days from a date -->
+            </h1>
+        </div>
+        <div class="planned-container">
+            <h2>today's problems!</h2>
+            <ul id="planned-problems">
+                <!-- Problems will be inserted here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+    <div class="table-container">
+        <table id="mytable" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="header-name">
+                            <span class="part1">na</span><span class="part2">me</span>
+                        </span>
+                    </th>
+                    <th class="header-3" data-sort="topic">topic</th>
+                    <th class="header-3" data-sort="completed">status</th>
+                    <th class="header-3" data-sort="confidence">confidence</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Table rows will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="daily-script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

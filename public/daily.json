@@ -1,0 +1,243 @@
+[
+    {
+      "day": 1,
+      "problems": ["Two Sum", "Best Time to Buy and Sell Stock"]
+    },
+    {
+      "day": 2,
+      "problems": ["Contains Duplicate", "Product of Array Except Self"]
+    },
+    {
+      "day": 3,
+      "problems": ["Maximum Subarray", "Merge Intervals"]
+    },
+    {
+      "day": 4,
+      "problems": ["Valid Anagram", "Group Anagrams"]
+    },
+    {
+      "day": 5,
+      "problems": ["Longest Substring Without Repeating Characters", "Palindromic Substrings"]
+    },
+    {
+      "day": 6,
+      "problems": ["Longest Palindromic Substring", "Implement strStr()"]
+    },
+    {
+      "day": 7,
+      "problems": ["Reverse Linked List", "Merge Two Sorted Lists"]
+    },
+    {
+      "day": 8,
+      "problems": ["Remove Nth Node From End of List", "Palindrome Linked List"]
+    },
+    {
+      "day": 9,
+      "problems": ["Two Sum II - Input Array Is Sorted", "Intersection of Two Arrays II"]
+    },
+    {
+      "day": 10,
+      "problems": ["Find All Anagrams in a String", "First Unique Character in a String"]
+    },
+    {
+      "day": 11,
+      "problems": ["Intersection of Two Linked Lists", "Min Stack"]
+    },
+    {
+      "day": 12,
+      "problems": ["Maximum Depth of Binary Tree", "Climbing Stairs"]
+    },
+    {
+      "day": 13,
+      "problems": ["Valid Parentheses", "Symmetric Tree"]
+    },
+    {
+      "day": 14,
+      "problems": ["Maximum Depth of Binary Tree", "Min Stack"]
+    },
+    {
+      "day": 15,
+      "problems": ["Binary Tree Inorder Traversal", "Binary Tree Level Order Traversal"]
+    },
+    {
+      "day": 16,
+      "problems": ["Validate Binary Search Tree", "Construct Binary Tree from Preorder and Inorder Traversal"]
+    },
+    {
+      "day": 17,
+      "problems": ["Kth Smallest Element in a BST", "Lowest Common Ancestor of a Binary Tree"]
+    },
+    {
+      "day": 18,
+      "problems": ["Serialize and Deserialize Binary Tree", "Binary Tree Right Side View"]
+    },
+    {
+      "day": 19,
+      "problems": ["Clone Graph", "Course Schedule"]
+    },
+    {
+      "day": 20,
+      "problems": ["Number of Islands", "Pacific Atlantic Water Flow"]
+    },
+    {
+      "day": 21,
+      "problems": ["Word Ladder", "Reconstruct Itinerary"]
+    },
+    {
+      "day": 22,
+      "problems": ["Alien Dictionary", "Network Delay Time"]
+    },
+    {
+      "day": 23,
+      "problems": ["Search in Rotated Sorted Array", "Find Peak Element"]
+    },
+    {
+      "day": 24,
+      "problems": ["Median of Two Sorted Arrays", "Find First and Last Position of Element in Sorted Array"]
+    },
+    {
+      "day": 25,
+      "problems": ["Merge Intervals", "Top K Frequent Elements"]
+    },
+    {
+      "day": 26,
+      "problems": ["House Robber", "Coin Change"]
+    },
+    {
+      "day": 27,
+      "problems": ["Longest Increasing Subsequence", "Word Break"]
+    },
+    {
+      "day": 28,
+      "problems": ["Maximum Product Subarray", "Unique Paths"]
+    },
+    {
+      "day": 29,
+      "problems": ["Edit Distance", "Burst Balloons"]
+    },
+    {
+      "day": 30,
+      "problems": ["Regular Expression Matching", "Palindrome Partitioning II"]
+    },
+    {
+      "day": 31,
+      "problems": ["Longest Valid Parentheses", "Wildcard Matching"]
+    },
+    {
+      "day": 32,
+      "problems": ["Subsets", "Combination Sum"]
+    },
+    {
+      "day": 33,
+      "problems": ["Word Search", "N-Queens"]
+    },
+    {
+      "day": 34,
+      "problems": ["Permutations", "Sudoku Solver"]
+    },
+    {
+      "day": 35,
+      "problems": ["LRU Cache", "Design Twitter"]
+    },
+    {
+      "day": 36,
+      "problems": ["Serialize and Deserialize Binary Tree", "LFU Cache"]
+    },
+    {
+      "day": 37,
+      "problems": ["Design Search Autocomplete System", "Design Hit Counter"]
+    },
+    {
+      "day": 38,
+      "problems": ["Regular Expression Matching", "N-Queens"]
+    },
+    {
+      "day": 39,
+      "problems": ["Coin Change", "Word Ladder"]
+    },
+    {
+      "day": 40,
+      "problems": ["Longest Valid Parentheses", "Subsets"]
+    },
+    {
+      "day": 41,
+      "problems": ["Two Sum", "Longest Substring Without Repeating Characters", "Word Ladder"]
+    },
+    {
+      "day": 42,
+      "problems": ["Reverse Linked List", "Validate Binary Search Tree", "N-Queens"]
+    },
+    {
+      "day": 43,
+      "problems": ["Product of Array Except Self", "Binary Tree Inorder Traversal", "Median of Two Sorted Arrays"]
+    },
+    {
+      "day": 44,
+      "problems": ["Group Anagrams", "Kth Smallest Element in a BST", "Edit Distance"]
+    },
+    {
+      "day": 45,
+      "problems": ["System Design Basics"]
+    },
+    {
+      "day": 46,
+      "problems": ["System Design Basics"]
+    },
+    {
+      "day": 47,
+      "problems": ["System Design Basics"]
+    },
+    {
+      "day": 48,
+      "problems": ["Alien Dictionary", "Longest Increasing Subsequence"]
+    },
+    {
+      "day": 49,
+      "problems": ["LRU Cache", "Serialize and Deserialize Binary Tree"]
+    },
+    {
+      "day": 50,
+      "problems": ["Review Weak Topics"]
+    },
+    {
+      "day": 51,
+      "problems": ["Review Weak Topics"]
+    },
+    {
+      "day": 52,
+      "problems": ["Review Weak Topics"]
+    },
+    {
+      "day": 53,
+      "problems": ["Review Weak Topics"]
+    },
+    {
+      "day": 54,
+      "problems": ["Mock Interview 3"]
+    },
+    {
+      "day": 55,
+      "problems": ["Mock Interview 4"]
+    },
+    {
+      "day": 56,
+      "problems": ["Final Review and Light Practice"]
+    },
+    {
+      "day": 57,
+      "problems": ["Final Review and Light Practice"]
+    },
+    {
+      "day": 58,
+      "problems": ["Final Review and Light Practice"]
+    },
+    {
+      "day": 59,
+      "problems": ["Final Review and Light Practice"]
+    },
+    {
+      "day": 60,
+      "problems": ["Final Review and Light Practice"]
+    }
+  ]
+  

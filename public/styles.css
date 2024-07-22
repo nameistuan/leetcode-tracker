@@ -1,0 +1,179 @@
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #fdffff;
+    color: #333;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    margin: auto;
+    /* padding: 10px; */
+    padding-bottom: 0px;
+    font-weight: 900;
+    font-size: 100px;
+}
+
+:root {
+    --top-bar-color: #29738e;
+    --bright-orange: #febc40;
+}
+
+.dot, .header-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer; /* Make the dot clickable */
+}
+
+.header-dot {
+    background-color: #888; /* Default color for header dot */
+    position: relative; /* Ensure the dot stays in place */
+    top: 0; /* Adjust as necessary */
+    left: -25px; /* Move to the left of the name */
+}
+
+.header-dot:hover {
+    background-color: var(--bright-orange);
+}
+
+.dot-Easy {
+    background-color: #39ff14;
+}
+
+.dot-Medium {
+    background-color: #ffff20;
+}
+
+.dot-Hard {
+    background-color: #ff3131;
+}
+
+.table-container {
+    position: relative; /* Ensure table container is positioned */
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+.table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    text-align: left;
+    font-size: larger;
+    border-style: solid;
+    border: 2px;
+    padding: 8px;
+}
+
+.table td {
+    font-weight: 400;
+}
+
+.table a {
+    color: #333;
+    text-decoration: none; 
+}
+
+.table a:hover {
+    color: #4abaff;
+}
+
+.header-3:hover{
+    color: #d675ff;
+}
+
+.table .hovered-row {
+    background-color: var(--bright-orange);
+}
+
+.header-name span {
+    cursor: pointer;
+}
+
+.header-name .part1:hover{
+    color: var(--bright-orange);
+}
+
+.header-name .part2:hover{
+    color: #4abaff;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    justify-content: center;
+}
+
+/* Progress bar styles */
+.progress {
+    background: transparent;
+    margin-bottom: 10px;
+    position: relative;
+    height: 30px;
+    border: 2px solid #07f985;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: #07f985;
+}
+
+.progress-text {
+    position: absolute;
+    font-weight: 700;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-60%);
+}
+
+.daily-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%; /* Ensure it takes the full width */
+    text-align: left; /* Align text to the left */
+    margin-left: 0; /* Move it to the left margin */
+}
+
+#daily-count {
+    color: #333;
+    font-size: 300px;
+    padding-bottom: 60px;
+    padding-left: 100px;
+    border-radius: 10px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.planned-container {
+    padding-right: 100px;
+    width: 50%;
+}
+
+.planned-container ul {
+    font-size: 30px;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.planned-container h2 {
+    font-size: 60px;
+    margin-top: 100px;
+    padding-bottom: 10px;
+}
+
