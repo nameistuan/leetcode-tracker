@@ -10,7 +10,6 @@ body {
 h1 {
     margin: auto;
     /* padding: 10px; */
-    padding-bottom: 0px;
     font-weight: 900;
     font-size: 100px;
 }
@@ -138,7 +137,6 @@ h1 {
 }
 
 .daily-container {
-    padding-top: 50px;
     padding-bottom: 50px;
     width: 100%; /* Ensure it takes the full width */
     text-align: left; /* Align text to the left */
@@ -148,7 +146,6 @@ h1 {
 #daily-count {
     color: #333;
     font-size: 300px;
-    padding-bottom: 60px;
     padding-left: 100px;
     border-radius: 10px;
 }
@@ -166,6 +163,7 @@ h1 {
 }
 
 .planned-container ul {
+    font-weight: 500;
     font-size: 30px;
     justify-content: center;
     list-style-type: none;
@@ -174,7 +172,24 @@ h1 {
 
 .planned-container h2 {
     font-size: 60px;
-    margin-top: 190px;
+    margin-top: 130px;
     padding-bottom: 10px;
 }
 
+/* Arrows Container Styles */
+.arrows-container {
+    display: flex;
+    gap: 30px;
+    padding-left: 300px;
+}
+
+.arrow-buttons {
+    cursor: pointer;
+    font-size: 100px;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.arrow-buttons:hover{
+    color:orange;
+}
