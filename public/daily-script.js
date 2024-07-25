@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const todayButton = document.getElementById('today');
     const dailyCountElement = document.getElementById('daily-count');
     const plannedProblemsContainer = document.getElementById('planned-problems');
+    const currDate = document.getElementById('current-date');
+
 
     let dayOffset = 0;
 
@@ -16,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
     dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
+
+    let tempDate = new Date();
+    tempDate.setDate(startDate.getDate() + daysPassed + dayOffset);
 
     let problemsData = [];
 
@@ -34,6 +39,21 @@ document.addEventListener('DOMContentLoaded', function() {
         plannedProblemsContainer.innerHTML = ''; // Clear existing problems
         dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
 
+        tempDate.setDate(startDate.getDate() + daysPassed + dayOffset);
+        //console.log(`days passed (not day count which is +1): ${daysPassed}, days offset: ${dayOffset}`)
+        if(tempDate.getMonth() + 1 < 10 && tempDate.getDate() < 10){
+            currDate.textContent = `0${tempDate.getMonth() + 1}.0${tempDate.getDate()}.${tempDate.getFullYear()}`;
+        }
+        else if(tempDate.getMonth() + 1 < 10){
+            currDate.textContent = `0${tempDate.getMonth() + 1}.${tempDate.getDate()}.${tempDate.getFullYear()}`;
+        }
+        else if(tempDate.getDate()< 10){
+            currDate.textContent = `${tempDate.getMonth() + 1}.0${tempDate.getDate()}.${tempDate.getFullYear()}`;
+        }
+        else{currDate.textContent = `${tempDate.getMonth() + 1}.${tempDate.getDate()}.${tempDate.getFullYear()}`};
+
+
+        //adding problems from daily.json to today's problems
         if (plannedProblems.length === 0) {
             plannedProblemsContainer.textContent = 'No problems planned for today.';
         } else {
