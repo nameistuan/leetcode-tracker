@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function addHoverListeners() {
-        const statusCells = document.querySelectorAll('.table td:nth-child(3), .table td:nth-child(4)');
+        const statusCells = document.querySelectorAll('.table td:nth-child(2), .table td:nth-child(3), .table td:nth-child(4)');
         statusCells.forEach(cell => {
             cell.addEventListener('mouseenter', function() {
                 this.parentElement.classList.add('hovered-row');

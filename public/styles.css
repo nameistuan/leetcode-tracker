@@ -17,6 +17,7 @@ h1 {
 :root {
     --top-bar-color: #29738e;
     --bright-orange: #febc40;
+    --hot-pink: #FF69B4;
 }
 
 .dot, .header-dot {
@@ -177,6 +178,11 @@ h1 {
     padding-bottom: 10px;
 }
 
+.planned-container li:hover{
+    color: var(--hot-pink);
+    cursor: pointer;
+}
+
 /* Arrows Container Styles */
 .arrows-container {
     display: flex;
@@ -201,3 +207,4 @@ h1 {
     font-weight: 700;
     padding-left: 434px;
 }
+

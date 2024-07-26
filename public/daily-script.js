@@ -19,16 +19,27 @@ document.addEventListener('DOMContentLoaded', function() {
     dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
 
     let problemsData = [];
+    let database = [];
 
-    function fetchProblemsData() {
+    function fetchData() {
+        // Fetch daily.json
         fetch('daily.json')
             .then(response => response.json())
-            .then(data => {
-                problemsData = data;
-                loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData);
+            .then(dailyData => {
+                problemsData = dailyData;
+                console.log('daily.json:', problemsData); // Log daily.json data
+                // Fetch data.json after daily.json
+                return fetch('data.json');
             })
-            .catch(error => console.error('Error loading daily.json data:', error));
+            .then(response => response.json())
+            .then(data => {
+                database = data;
+                console.log('data.json:', database); // Log data.json data
+                loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData, database);
+            })
+            .catch(error => console.error('Error loading JSON data:', error));
     }
+    
 
     function formatDate(date) {
         const month = date.getMonth() + 1;
@@ -37,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${month < 10 ? '0' + month : month}.${day < 10 ? '0' + day : day}.${year}`;
     }
 
-    function loadPlannedProblems(currentDay, problemsData) {
+    function loadPlannedProblems(currentDay, problemsData, database) {
         const plannedProblems = problemsData.find(dayData => dayData.day === currentDay)?.problems || [];
         plannedProblemsContainer.innerHTML = ''; // Clear existing problems
         dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
@@ -51,10 +62,21 @@ document.addEventListener('DOMContentLoaded', function() {
         if (plannedProblems.length === 0) {
             plannedProblemsContainer.textContent = 'No problems planned for today.';
         } else {
-            plannedProblems.forEach(problem => {
-                const li = document.createElement('li');
-                li.textContent = problem;
-                plannedProblemsContainer.appendChild(li);
+            plannedProblems.forEach(problemName => {
+                // Find the problem details from the database
+                const problemDetails = database.find(problem => problem.name === problemName);
+
+                if (problemDetails) {
+                    const li = document.createElement('li');
+                    li.textContent = problemDetails.name;
+
+                    // Add click event to open the problem URL
+                    li.addEventListener('click', () => {
+                        window.open(problemDetails.url, '_blank');
+                    });
+
+                    plannedProblemsContainer.appendChild(li);
+                }
             });
         }
     }
@@ -64,21 +86,21 @@ document.addEventListener('DOMContentLoaded', function() {
         dayOffset--;
         console.log('Left arrow clicked');
         console.log(`Day offset: ${dayOffset}`);
-        loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData);
+        loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData, database);
     });
 
     rightArrow.addEventListener('click', () => {
         dayOffset++;
         console.log('Right arrow clicked');
         console.log(`Day offset: ${dayOffset}`);
-        loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData);
+        loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData, database);
     });
 
     todayButton.addEventListener('click', () => {
         dayOffset = 0;
         console.log('Today button clicked');
-        loadPlannedProblems(daysPassed + 1, problemsData);
+        loadPlannedProblems(daysPassed + 1, problemsData, database);
     });
 
-    fetchProblemsData();
+    fetchData();
 });
