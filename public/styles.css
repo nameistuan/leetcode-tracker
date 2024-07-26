@@ -137,17 +137,45 @@ h1 {
 }
 
 .daily-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements horizontally */
+    justify-content: center; /* Center child elements vertically */
     padding-bottom: 50px;
-    width: 100%; /* Ensure it takes the full width */
-    text-align: left; /* Align text to the left */
-    margin-left: 0; /* Move it to the left margin */
+    width: 80%; /* Set the same width as .planned-container */
+    text-align: center; /* Center text within child elements */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 #daily-count {
     color: #333;
     font-size: 300px;
-    padding-left: 100px;
+    padding-left: 0; /* Remove left padding */
     border-radius: 10px;
+}
+
+.arrows-container {
+    display: flex;
+    gap: 30px;
+    padding-left: 0; /* Remove left padding */
+}
+
+.arrow-buttons {
+    cursor: pointer;
+    font-size: 100px;
+    font-weight: 700;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.arrow-buttons:hover{
+    color: orange;
+}
+
+.current-date-container {
+    font-size: 30px;
+    font-weight: 700;
+    padding-left: 0; /* Remove left padding */
 }
 
 .main-container {
@@ -160,8 +188,8 @@ h1 {
 }
 
 .planned-container {
-    padding-right: 100px;
-    width: 50%;
+    width: 80%; /* Ensure it takes the same width as .daily-container */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .planned-container ul {
@@ -178,33 +206,7 @@ h1 {
     padding-bottom: 10px;
 }
 
-.planned-container li:hover{
+.planned-container li:hover {
     color: var(--hot-pink);
     cursor: pointer;
 }
-
-/* Arrows Container Styles */
-.arrows-container {
-    display: flex;
-    gap: 30px;
-    padding-left: 300px;
-}
-
-.arrow-buttons {
-    cursor: pointer;
-    font-size: 100px;
-    font-weight: 700;
-    user-select: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.arrow-buttons:hover{
-    color:orange;
-}
-
-.current-date-container{
-    font-size: 30px;
-    font-weight: 700;
-    padding-left: 434px;
-}
-
