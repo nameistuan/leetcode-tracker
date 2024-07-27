@@ -220,7 +220,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateProgress(progressBar, questionsDone){
-        value = Math.round((questionsDone/75)*100);
+        value = ((questionsDone/problemsData.length)*100); // currently 125?
+        console.log(`Number of problems: ${problemsData.length}, value: ${value}`);
         progressBar.querySelector(".progress-fill").style.width = `${value}%`;
         progressBar.querySelector(".progress-text").textContent = questionsDone;
     }
