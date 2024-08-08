@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let dayOffset = 0;
 
-    const startDate = new Date('2024-07-20T00:00:00-05:00');
+    const startDate = new Date('2024-08-07T00:00:00-05:00');
     const today = new Date();
 
     console.log(`Start date: ${startDate.toLocaleString()}, Today: ${today.toLocaleString()}`);

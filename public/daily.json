@@ -1,269 +1,338 @@
 [
   {
     "day": 1,
-    "problems": ["Two Sum", "Add Two Numbers"]
+    "problems": ["Contains Duplicate", "Valid Anagram"]
   },
   {
     "day": 2,
-    "problems": [
-      "Longest Substring Without Repeating Characters",
-      "Median of Two Sorted Arrays"
-    ]
+    "problems": ["Two Sum", "Group Anagrams"]
   },
   {
     "day": 3,
-    "problems": ["Longest Palindromic Substring", "Reverse Integer"]
+    "problems": ["Top K Frequent Elements", "Encode and Decode Strings"]
   },
   {
     "day": 4,
-    "problems": ["Regular Expression Matching", "Container With Most Water"]
+    "problems": ["Product of Array Except Self", "Valid Sudoku"]
   },
   {
     "day": 5,
-    "problems": ["3Sum", "Letter Combinations of a Phone Number"]
+    "problems": ["Longest Consecutive Sequence", "Valid Palindrome"]
   },
   {
     "day": 6,
-    "problems": ["Remove Nth Node From End of List", "Valid Parentheses"]
+    "problems": ["Two Sum II Input Array Is Sorted", "3Sum"]
   },
   {
     "day": 7,
-    "problems": ["Merge Two Sorted Lists", "Generate Parentheses"]
+    "problems": ["Container With Most Water", "Trapping Rain Water"]
   },
   {
     "day": 8,
-    "problems": ["Merge k Sorted Lists", "Reverse Nodes in k-Group"]
+    "problems": ["Valid Parentheses", "Min Stack"]
   },
   {
     "day": 9,
-    "problems": ["Search in Rotated Sorted Array", "Valid Sudoku"]
+    "problems": ["Evaluate Reverse Polish Notation", "Generate Parentheses"]
   },
   {
     "day": 10,
-    "problems": ["Combination Sum", "Combination Sum II"]
+    "problems": ["Daily Temperatures", "Car Fleet"]
   },
   {
     "day": 11,
-    "problems": ["Trapping Rain Water", "Multiply Strings"]
+    "problems": ["Largest Rectangle In Histogram", "Binary Search"]
   },
   {
     "day": 12,
-    "problems": ["Jump Game II", "Permutations"]
+    "problems": ["Search a 2D Matrix", "Koko Eating Bananas"]
   },
   {
     "day": 13,
-    "problems": ["Rotate Image", "Group Anagrams"]
+    "problems": [
+      "Find Minimum In Rotated Sorted Array",
+      "Search In Rotated Sorted Array"
+    ]
   },
   {
     "day": 14,
-    "problems": ["Pow(x, n)", "N-Queens"]
+    "problems": ["Time Based Key Value Store", "Median of Two Sorted Arrays"]
   },
   {
     "day": 15,
-    "problems": ["Maximum Subarray", "Spiral Matrix"]
+    "problems": [
+      "Best Time to Buy And Sell Stock",
+      "Longest Substring Without Repeating Characters"
+    ]
   },
   {
     "day": 16,
-    "problems": ["Jump Game", "Merge Intervals"]
+    "problems": [
+      "Longest Repeating Character Replacement",
+      "Permutation In String"
+    ]
   },
   {
     "day": 17,
-    "problems": ["Insert Interval", "Unique Paths"]
+    "problems": ["Minimum Window Substring", "Sliding Window Maximum"]
   },
   {
     "day": 18,
-    "problems": ["Plus One", "Climbing Stairs"]
+    "problems": ["Reverse Linked List", "Merge Two Sorted Lists"]
   },
   {
     "day": 19,
-    "problems": ["Edit Distance", "Set Matrix Zeroes"]
+    "problems": ["Reorder List", "Remove Nth Node From End of List"]
   },
   {
     "day": 20,
-    "problems": ["Search a 2D Matrix", "Minimum Window Substring"]
+    "problems": ["Copy List With Random Pointer", "Add Two Numbers"]
   },
   {
     "day": 21,
-    "problems": ["Subsets", "Word Search"]
+    "problems": ["Linked List Cycle", "Find The Duplicate Number"]
   },
   {
     "day": 22,
-    "problems": ["Largest Rectangle in Histogram", "Subsets II"]
+    "problems": ["LRU Cache", "Merge K Sorted Lists"]
   },
   {
     "day": 23,
-    "problems": ["Decode Ways", "Interleaving String"]
+    "problems": ["Reverse Nodes In K Group", "Invert Binary Tree"]
   },
   {
     "day": 24,
-    "problems": ["Validate Binary Search Tree", "Same Tree"]
+    "problems": ["Maximum Depth of Binary Tree", "Diameter of Binary Tree"]
   },
   {
     "day": 25,
-    "problems": [
-      "Binary Tree Level Order Traversal",
-      "Maximum Depth of Binary Tree"
-    ]
+    "problems": ["Balanced Binary Tree", "Same Tree"]
   },
   {
     "day": 26,
     "problems": [
-      "Construct Binary Tree from Preorder and Inorder Traversal",
-      "Balanced Binary Tree"
+      "Subtree of Another Tree",
+      "Lowest Common Ancestor of a Binary Search Tree"
     ]
   },
   {
     "day": 27,
-    "problems": ["Distinct Subsequences", "Best Time to Buy and Sell Stock"]
+    "problems": [
+      "Binary Tree Level Order Traversal",
+      "Binary Tree Right Side View"
+    ]
   },
   {
     "day": 28,
-    "problems": ["Binary Tree Maximum Path Sum", "Valid Palindrome"]
+    "problems": [
+      "Count Good Nodes In Binary Tree",
+      "Validate Binary Search Tree"
+    ]
   },
   {
     "day": 29,
-    "problems": ["Word Ladder", "Longest Consecutive Sequence"]
+    "problems": [
+      "Kth Smallest Element In a Bst",
+      "Construct Binary Tree From Preorder And Inorder Traversal"
+    ]
   },
   {
     "day": 30,
-    "problems": ["Surrounded Regions", "Palindrome Partitioning"]
+    "problems": [
+      "Binary Tree Maximum Path Sum",
+      "Serialize And Deserialize Binary Tree"
+    ]
   },
   {
     "day": 31,
-    "problems": ["Clone Graph", "Gas Station"]
+    "problems": ["Subsets", "Combination Sum"]
   },
   {
     "day": 32,
-    "problems": ["Single Number", "Copy List with Random Pointer"]
+    "problems": ["Permutations", "Subsets II"]
   },
   {
     "day": 33,
-    "problems": ["Word Break", "Linked List Cycle"]
+    "problems": ["Combination Sum II", "Word Search"]
   },
   {
     "day": 34,
-    "problems": ["Reorder List", "LRU Cache"]
+    "problems": [
+      "Palindrome Partitioning",
+      "Letter Combinations of a Phone Number"
+    ]
   },
   {
     "day": 35,
-    "problems": ["Evaluate Reverse Polish Notation", "Maximum Product Subarray"]
+    "problems": ["N Queens", "Implement Trie Prefix Tree"]
   },
   {
     "day": 36,
-    "problems": ["Find Minimum in Rotated Sorted Array", "Min Stack"]
+    "problems": ["Design Add And Search Words Data Structure", "Word Search II"]
   },
   {
     "day": 37,
-    "problems": ["Two Sum II - Input Array Is Sorted", "Reverse Bits"]
+    "problems": ["Kth Largest Element In a Stream", "Last Stone Weight"]
   },
   {
     "day": 38,
-    "problems": ["Number of 1 Bits", "House Robber"]
+    "problems": [
+      "K Closest Points to Origin",
+      "Kth Largest Element In An Array"
+    ]
   },
   {
     "day": 39,
-    "problems": ["Binary Tree Right Side View", "Number of Islands"]
+    "problems": ["Task Scheduler", "Design Twitter"]
   },
   {
     "day": 40,
-    "problems": ["Happy Number", "Reverse Linked List"]
+    "problems": ["Find Median From Data Stream", "Number of Islands"]
   },
   {
     "day": 41,
-    "problems": ["Course Schedule", "Implement Trie (Prefix Tree)"]
+    "problems": ["Max Area of Island", "Clone Graph"]
   },
   {
     "day": 42,
-    "problems": [
-      "Course Schedule II",
-      "Design Add and Search Words Data Structure"
-    ]
+    "problems": ["Walls And Gates", "Rotting Oranges"]
   },
   {
     "day": 43,
-    "problems": ["Word Search II", "House Robber II"]
+    "problems": ["Pacific Atlantic Water Flow", "Surrounded Regions"]
   },
   {
     "day": 44,
-    "problems": ["Kth Largest Element in an Array", "Contains Duplicate"]
+    "problems": ["Course Schedule", "Course Schedule II"]
   },
   {
     "day": 45,
-    "problems": ["Invert Binary Tree", "Kth Smallest Element in a BST"]
+    "problems": [
+      "Graph Valid Tree",
+      "Number of Connected Components In An Undirected Graph"
+    ]
   },
   {
     "day": 46,
-    "problems": [
-      "Lowest Common Ancestor of a Binary Search Tree",
-      "Product of Array Except Self",
-      "Merge Triplets to Form Target Triplet"
-    ]
+    "problems": ["Redundant Connection", "Word Ladder"]
   },
   {
     "day": 47,
-    "problems": ["Sliding Window Maximum", "Valid Anagram"]
+    "problems": ["Climbing Stairs", "Min Cost Climbing Stairs"]
   },
   {
     "day": 48,
-    "problems": ["Meeting Rooms", "Meeting Rooms II"]
+    "problems": ["House Robber", "House Robber II"]
   },
   {
     "day": 49,
-    "problems": ["Graph Valid Tree", "Missing Number"]
+    "problems": ["Longest Palindromic Substring", "Palindromic Substrings"]
   },
   {
     "day": 50,
-    "problems": ["Alien Dictionary", "Encode and Decode Strings"]
+    "problems": ["Decode Ways", "Coin Change"]
   },
   {
     "day": 51,
-    "problems": ["Palindromic Substrings", "Valid Parenthesis String"]
+    "problems": ["Maximum Product Subarray", "Word Break"]
   },
   {
     "day": 52,
-    "problems": ["Redundant Connection", "Max Area of Island"]
+    "problems": ["Longest Increasing Subsequence", "Partition Equal Subset Sum"]
   },
   {
     "day": 53,
-    "problems": ["Daily Temperatures", "Network Delay Time"]
+    "problems": ["Meeting Rooms", "Insert Interval"]
   },
   {
     "day": 54,
-    "problems": ["Min Cost Climbing Stairs", "Partition Labels"]
+    "problems": ["Merge Intervals", "Non Overlapping Intervals"]
   },
   {
     "day": 55,
-    "problems": ["Kth Largest Element in a Stream", "Binary Search"]
+    "problems": ["Meeting Rooms II", "Minimum Interval to Include Each Query"]
   },
   {
     "day": 56,
-    "problems": ["Swim in Rising Water", "Cheapest Flights Within K Stops"]
+    "problems": ["Maximum Subarray", "Jump Game"]
   },
   {
     "day": 57,
-    "problems": ["Hand of Straights", "Car Fleet"]
+    "problems": ["Jump Game II", "Gas Station"]
   },
   {
     "day": 58,
-    "problems": ["Koko Eating Bananas", "K Closest Points to Origin"]
+    "problems": ["Hand of Straights", "Merge Triplets to Form Target Triplet"]
   },
   {
     "day": 59,
-    "problems": ["Time Based Key-Value Store", "Rotting Oranges"]
+    "problems": ["Partition Labels", "Valid Parenthesis String"]
   },
   {
     "day": 60,
-    "problems": ["Last Stone Weight", "Longest Common Subsequence"]
+    "problems": ["Reconstruct Itinerary", "Min Cost to Connect All Points"]
   },
   {
     "day": 61,
-    "problems": ["Detect Squares", "Minimum Window Substring"]
+    "problems": ["Network Delay Time", "Swim In Rising Water"]
   },
   {
     "day": 62,
+    "problems": ["Alien Dictionary", "Cheapest Flights Within K Stops"]
+  },
+  {
+    "day": 63,
+    "problems": ["Unique Paths", "Longest Common Subsequence"]
+  },
+  {
+    "day": 64,
     "problems": [
-      "Count Good Nodes in Binary Tree",
-      " Min Cost to Connect All Points"
+      "Best Time to Buy And Sell Stock With Cooldown",
+      "Coin Change II"
     ]
+  },
+  {
+    "day": 65,
+    "problems": ["Target Sum", "Interleaving String"]
+  },
+  {
+    "day": 66,
+    "problems": ["Edit Distance", "Longest Increasing Path In a Matrix"]
+  },
+  {
+    "day": 67,
+    "problems": ["Distinct Subsequences", "Burst Balloons"]
+  },
+  {
+    "day": 68,
+    "problems": ["Regular Expression Matching", "Single Number"]
+  },
+  {
+    "day": 69,
+    "problems": ["Number of 1 Bits", "Counting Bits"]
+  },
+  {
+    "day": 70,
+    "problems": ["Reverse Bits", "Missing Number"]
+  },
+  {
+    "day": 71,
+    "problems": ["Sum of Two Integers", "Reverse Integer"]
+  },
+  {
+    "day": 72,
+    "problems": ["Rotate Image", "Spiral Matrix"]
+  },
+  {
+    "day": 73,
+    "problems": ["Set Matrix Zeroes", "Happy Number"]
+  },
+  {
+    "day": 74,
+    "problems": ["Plus One", "Pow(x, n)"]
+  },
+  {
+    "day": 75,
+    "problems": ["Multiply Strings", "Detect Squares"]
   }
 ]

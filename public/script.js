@@ -4,29 +4,41 @@ document.addEventListener('DOMContentLoaded', function () {
     let problemsData = []; // Variable to store loaded data
 
     // Fetch JSON data and render table
-    fetch('/data.json')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data); // Log the data to see what's being fetched
-        problemsData = data;
+    fetchDataAndReorder();
 
-        const h1 = document.querySelector('h1');    
-        const progress = document.querySelector('.progress');
+    async function fetchDataAndReorder() {
+        try {
+            const [newOrder, data] = await Promise.all([
+                fetch('/newprob.txt').then(response => response.text()).then(text => text.split('\n').map(line => line.trim()).filter(line => line.length > 0)),
+                fetch('/data.json').then(response => response.json())
+            ]);
+
+            const dataMap = new Map(data.map(problem => [problem.name, problem]));
+
+            // Reorder data based on newOrder
+            const orderedData = newOrder.map(name => dataMap.get(name)).filter(problem => problem !== undefined);
+
+            problemsData = orderedData;
+
+            renderTable(problemsData);
+            
+            const h1 = document.querySelector('h1');    
+            const progress = document.querySelector('.progress');
 
             // Set the width of the progress bar to match the <h1> width
-        progress.style.width = `${h1.offsetWidth}px`;
-        const questionsDone = problemsData.filter(problem => problem.completed).length;
-        const myProgressBar = document.querySelector(".progress");
-        updateProgress(myProgressBar, questionsDone);
+            progress.style.width = `${h1.offsetWidth}px`;
+            const questionsDone = problemsData.filter(problem => problem.completed).length;
+            const myProgressBar = document.querySelector(".progress");
+            updateProgress(myProgressBar, questionsDone);
 
-        renderTable(problemsData);
-        addSortingEventListeners();
-        // addDotClickListener(); 
-        addPartClickListeners(); 
-    })
-    .catch(error => console.error('Error loading JSON data:', error));
+            addSortingEventListeners();
+            addPartClickListeners(); 
+            addHoverListeners();
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+    }
 
-    // Function to render the table based on current data
     function renderTable(data) {
         const tableBody = document.getElementById('tableBody');
         tableBody.innerHTML = ''; // Clear existing table rows
@@ -59,6 +71,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 const questionsDone = problemsData.filter(problem => problem.completed).length;
                 const myProgressBar = document.querySelector(".progress");
                 updateProgress(myProgressBar, questionsDone);
+
+                // Trigger confetti only if the checkbox is checked
+                if (this.checked) {
+                    const rect = this.getBoundingClientRect();
+                    const x = (rect.left + rect.width / 2) / window.innerWidth; // Center X
+                    const y = (rect.top + rect.height / 2) / window.innerHeight; // Center Y
+                    confetti({
+                        particleCount: 300,
+                        spread: 150,
+                        origin: { x, y },
+                    });
+                }
             });
 
             const select = row.querySelector('select');
@@ -67,11 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateDataJson(problemsData); // Update data.json with new confidence level
             });
         });
-
-        addHoverListeners();
     }
 
-    // Function to update data.json file with new status and confidence level
     function updateDataJson(data) {
         fetch('/update-data', {
             method: 'POST',
@@ -89,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error updating data.json:', error));
     }
 
-    // Function to determine the class for difficulty dot based on difficulty level
     function getDifficultyDotClass(difficulty) {
         switch (difficulty) {
             case 'Easy':
@@ -112,37 +132,33 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll("th[data-sort]").forEach(th => th.addEventListener("click", function() {
             const sortKey = th.getAttribute('data-sort');
             const asc = this.asc = !this.asc;
-
+    
             console.log(`Sorting by ${sortKey} in ${asc ? 'ascending' : 'descending'} order`);
-
+    
             problemsData.sort((a, b) => {
-                // Handle different data types
                 if (typeof a[sortKey] === 'boolean' && typeof b[sortKey] === 'boolean') {
-                    // Custom comparison for boolean status
-                    const aValue = statusMapping[a[sortKey]];
-                    const bValue = statusMapping[b[sortKey]];
-                    console.log(`Comparing boolean: a[${sortKey}] = ${a[sortKey]}, b[${sortKey}] = ${b[sortKey]}`);
-                    return asc ? aValue - bValue : bValue - aValue;
+                    // Handle boolean values for sorting
+                    if (asc) {
+                        // Ascending: true (1) comes before false (0)
+                        return (a[sortKey] === b[sortKey]) ? 0 : a[sortKey] ? -1 : 1;
+                    } else {
+                        // Descending: false (0) comes before true (1)
+                        return (a[sortKey] === b[sortKey]) ? 0 : a[sortKey] ? 1 : -1;
+                    }
                 } else if (typeof a[sortKey] === 'string' && typeof b[sortKey] === 'string') {
-                    // Compare strings
-                    console.log(`Comparing strings: a[${sortKey}] = ${a[sortKey]}, b[${sortKey}] = ${b[sortKey]}`);
+                    // Handle string values for sorting
                     return asc ? a[sortKey].localeCompare(b[sortKey]) : b[sortKey].localeCompare(a[sortKey]);
                 } else {
-                    // Default to numeric comparison for other types
-                    console.log(`Comparing numeric: a[${sortKey}] = ${a[sortKey]}, b[${sortKey}] = ${b[sortKey]}`);
+                    // Handle numeric values for sorting
                     return asc ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
                 }
             });
-
+    
             renderTable(problemsData);
             updateDataJson(problemsData);
-
-            // // Toggle sorting indicator classes
-            // document.querySelectorAll("th").forEach(th => th.classList.remove("sort-asc", "sort-desc"));
-            // th.classList.toggle("sort-asc", asc);
-            // th.classList.toggle("sort-desc", !asc);
         }));
     }
+    
 
     function addHoverListeners() {
         const statusCells = document.querySelectorAll('.table td:nth-child(2), .table td:nth-child(3), .table td:nth-child(4)');
@@ -156,40 +172,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    addHoverListeners();
-
-    // function addDotClickListener() {
-    //     const headerDot = document.querySelector('#sortDifficultyDot');
-    //     headerDot.addEventListener('click', function() {
-    //         const asc = this.asc = !this.asc;
-
-    //         console.log(`Sorting by difficulty in ${asc ? 'ascending' : 'descending'} order`);
-    //         console.log('Before sorting:', JSON.stringify(problemsData, null, 2));
-
-    //         problemsData.sort((a, b) => {
-    //             const difficultyOrder = {
-    //                 'Easy': 1,
-    //                 'Medium': 2,
-    //                 'Hard': 3
-    //             };
-    //             const aValue = difficultyOrder[a.difficulty] || 0;
-    //             const bValue = difficultyOrder[b.difficulty] || 0;
-    //             return asc ? aValue - bValue : bValue - aValue;
-    //         });
-
-    //         console.log('After sorting:', JSON.stringify(problemsData, null, 2));
-    //         renderTable(problemsData);
-    //     });
-    // }
-
     function addPartClickListeners() {
         const part1 = document.querySelector('.header-name .part1');
         const part2 = document.querySelector('.header-name .part2');
     
         part1.addEventListener('click', function () {
             const asc = this.asc = !this.asc;
-            console.log(`Sorting by part1 (na) in ${asc ? 'ascending' : 'descending'} order`);
-    
             problemsData.sort((a, b) => {
                 return asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
             });
@@ -199,10 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
         part2.addEventListener('click', function () {
             const asc = this.asc = !this.asc;
-    
-            console.log(`Sorting by difficulty in ${asc ? 'ascending' : 'descending'} order`);
-            console.log('Before sorting:', JSON.stringify(problemsData, null, 2));
-    
             problemsData.sort((a, b) => {
                 const difficultyOrder = {
                     'Easy': 1,
@@ -213,8 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const bValue = difficultyOrder[b.difficulty] || 0;
                 return asc ? aValue - bValue : bValue - aValue;
             });
-    
-            console.log('After sorting:', JSON.stringify(problemsData, null, 2));
             renderTable(problemsData);
         });
     }
