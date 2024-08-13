@@ -12,8 +12,8 @@
     "difficulty": "Easy",
     "topic": "Hash Table, Sorting",
     "url": "https://leetcode.com/problems/valid-anagram/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Two Sum",
@@ -28,23 +28,23 @@
     "difficulty": "Medium",
     "topic": "Hash Table, String",
     "url": "https://leetcode.com/problems/group-anagrams/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Top K Frequent Elements",
     "difficulty": "Medium",
     "topic": "Hash Table",
     "url": "https://leetcode.com/problems/top-k-frequent-elements/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
-    "name": "Encode and Decode Strings",
-    "difficulty": "Hard",
-    "topic": "Design, String",
-    "url": "https://leetcode.com/problems/encode-and-decode-strings/",
-    "completed": false,
+    "name": "String Compression",
+    "difficulty": "Medium",
+    "topic": "String",
+    "url": "https://leetcode.com/problems/string-compression/",
+    "completed": true,
     "confidence": 1
   },
   {
@@ -52,16 +52,16 @@
     "difficulty": "Medium",
     "topic": "Array",
     "url": "https://leetcode.com/problems/product-of-array-except-self/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Valid Sudoku",
     "difficulty": "Medium",
     "topic": "Array, Hash Table",
     "url": "https://leetcode.com/problems/valid-sudoku/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Longest Consecutive Sequence",
@@ -76,24 +76,24 @@
     "difficulty": "Easy",
     "topic": "String, Two Pointers",
     "url": "https://leetcode.com/problems/valid-palindrome/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 3
   },
   {
     "name": "Two Sum II Input Array Is Sorted",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "topic": "Array",
     "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 3
   },
   {
     "name": "3Sum",
     "difficulty": "Medium",
     "topic": "Array, Two Pointers",
     "url": "https://leetcode.com/problems/3sum/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Container With Most Water",

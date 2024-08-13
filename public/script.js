@@ -2,53 +2,65 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('JavaScript is loaded and working!');
 
     let problemsData = []; // Variable to store loaded data
+    let dailyProblems = []; // Array to store today's problems for highlighting
+    let currentDayCount = 1; // Initial day count (should be updated dynamically)
 
-    // Fetch JSON data and render table
-    fetchDataAndReorder();
+    const tableBody = document.getElementById('tableBody');
+    const progress = document.querySelector('.progress');
+    const progressBarFill = progress.querySelector(".progress-fill");
+    const progressText = progress.querySelector(".progress-text");
 
-    async function fetchDataAndReorder() {
+    async function fetchData() {
         try {
-            const [newOrder, data] = await Promise.all([
+            // Fetch all data at once
+            const [newOrder, data, daily] = await Promise.all([
                 fetch('/newprob.txt').then(response => response.text()).then(text => text.split('\n').map(line => line.trim()).filter(line => line.length > 0)),
-                fetch('/data.json').then(response => response.json())
+                fetch('/data.json').then(response => response.json()),
+                fetch('/daily.json').then(response => response.json())
             ]);
 
-            const dataMap = new Map(data.map(problem => [problem.name, problem]));
+            problemsData = reorderData(newOrder, data);
+            dailyProblems = getDailyProblems(currentDayCount, daily);
 
-            // Reorder data based on newOrder
-            const orderedData = newOrder.map(name => dataMap.get(name)).filter(problem => problem !== undefined);
-
-            problemsData = orderedData;
-
-            renderTable(problemsData);
-            
-            const h1 = document.querySelector('h1');    
-            const progress = document.querySelector('.progress');
-
-            // Set the width of the progress bar to match the <h1> width
-            progress.style.width = `${h1.offsetWidth}px`;
-            const questionsDone = problemsData.filter(problem => problem.completed).length;
-            const myProgressBar = document.querySelector(".progress");
-            updateProgress(myProgressBar, questionsDone);
+            renderTable(); // Render the table once
+            updateProgressBar(); // Update progress bar once
 
             addSortingEventListeners();
-            addPartClickListeners(); 
             addHoverListeners();
+            addPartClickListeners();
+
+            // Listen for day change event
+            document.addEventListener('dayChanged', function (event) {
+                currentDayCount = event.detail;
+                dailyProblems = getDailyProblems(currentDayCount, daily);
+                renderTable(); // Re-render only when day changes
+            });
+
         } catch (error) {
             console.error('Error loading data:', error);
         }
     }
 
-    function renderTable(data) {
-        const tableBody = document.getElementById('tableBody');
+    function reorderData(order, data) {
+        const dataMap = new Map(data.map(problem => [problem.name, problem]));
+        return order.map(name => dataMap.get(name)).filter(problem => problem !== undefined);
+    }
+
+    function getDailyProblems(currentDay, daily) {
+        const todayData = daily.find(entry => entry.day === currentDay);
+        return todayData ? todayData.problems : [];
+    }
+
+    function renderTable() {
         tableBody.innerHTML = ''; // Clear existing table rows
 
-        data.forEach(problem => {
+        problemsData.forEach(problem => {
             const row = document.createElement('tr');
-            const difficultyClass = getDifficultyDotClass(problem.difficulty);
+            row.className = dailyProblems.includes(problem.name) ? 'highlight-row' : '';
+
             row.innerHTML = `
                 <td>
-                    <span class="dot ${difficultyClass}"></span>
+                    <span class="dot ${getDifficultyDotClass(problem.difficulty)}"></span>
                     <a href="${problem.url}" target="_blank">${problem.name}</a>
                 </td>
                 <td>${problem.topic}</td>
@@ -61,150 +73,126 @@ document.addEventListener('DOMContentLoaded', function () {
                     </select>
                 </td>
             `;
+
             tableBody.appendChild(row);
 
-            const checkbox = row.querySelector('input[type="checkbox"]');
-            checkbox.addEventListener('change', function () {
-                problem.completed = this.checked; // Update problem data
-                updateDataJson(problemsData); // Update data.json with new status
-
-                const questionsDone = problemsData.filter(problem => problem.completed).length;
-                const myProgressBar = document.querySelector(".progress");
-                updateProgress(myProgressBar, questionsDone);
-
-                // Trigger confetti only if the checkbox is checked
-                if (this.checked) {
-                    const rect = this.getBoundingClientRect();
-                    const x = (rect.left + rect.width / 2) / window.innerWidth; // Center X
-                    const y = (rect.top + rect.height / 2) / window.innerHeight; // Center Y
-                    confetti({
-                        particleCount: 300,
-                        spread: 150,
-                        origin: { x, y },
-                    });
-                }
-            });
-
-            const select = row.querySelector('select');
-            select.addEventListener('change', function () {
-                problem.confidence = parseInt(this.value); // Update problem data
-                updateDataJson(problemsData); // Update data.json with new confidence level
-            });
+            setupEventListeners(row, problem);
         });
     }
 
-    function updateDataJson(data) {
+    function setupEventListeners(row, problem) {
+        // Checkbox event listener
+        row.querySelector('input[type="checkbox"]').addEventListener('change', function () {
+            problem.completed = this.checked;
+            updateDataJson(); // Update data.json with new status
+            updateProgressBar(); // Update progress bar on status change
+
+            if (this.checked) {
+                triggerConfetti(this);
+            }
+        });
+
+        // Select event listener
+        row.querySelector('select').addEventListener('change', function () {
+            problem.confidence = parseInt(this.value);
+            updateDataJson(); // Update data.json with new confidence level
+        });
+    }
+
+    function updateDataJson() {
         fetch('/update-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(problemsData),
         })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to update data.json');
-            }
+            if (!response.ok) throw new Error('Failed to update data.json');
             console.log('Data updated successfully');
         })
         .catch(error => console.error('Error updating data.json:', error));
     }
 
+    function updateProgressBar() {
+        const questionsDone = problemsData.filter(problem => problem.completed).length;
+        const value = ((questionsDone / problemsData.length) * 100);
+        console.log(`Progress: ${value}% (${questionsDone}/${problemsData.length})`);
+        progressBarFill.style.width = `${value}%`;
+        progressText.textContent = questionsDone;
+    }
+    
+
     function getDifficultyDotClass(difficulty) {
-        switch (difficulty) {
-            case 'Easy':
-                return 'dot-Easy';
-            case 'Medium':
-                return 'dot-Medium';
-            case 'Hard':
-                return 'dot-Hard';
-            default:
-                return ''; // Default class or empty string if no match
-        }
+        const difficultyClassMap = {
+            'Easy': 'dot-Easy',
+            'Medium': 'dot-Medium',
+            'Hard': 'dot-Hard'
+        };
+        return difficultyClassMap[difficulty] || '';
     }
 
-    const statusMapping = {
-        true: 1,
-        false: 0
-    };
+    function triggerConfetti(element) {
+        const rect = element.getBoundingClientRect();
+        const x = (rect.left + rect.width / 2) / window.innerWidth;
+        const y = (rect.top + rect.height / 2) / window.innerHeight;
+
+        confetti({
+            particleCount: 300,
+            spread: 150,
+            origin: { x, y },
+        });
+    }
 
     function addSortingEventListeners() {
         document.querySelectorAll("th[data-sort]").forEach(th => th.addEventListener("click", function() {
             const sortKey = th.getAttribute('data-sort');
             const asc = this.asc = !this.asc;
-    
+
             console.log(`Sorting by ${sortKey} in ${asc ? 'ascending' : 'descending'} order`);
-    
+
             problemsData.sort((a, b) => {
-                if (typeof a[sortKey] === 'boolean' && typeof b[sortKey] === 'boolean') {
-                    // Handle boolean values for sorting
-                    if (asc) {
-                        // Ascending: true (1) comes before false (0)
-                        return (a[sortKey] === b[sortKey]) ? 0 : a[sortKey] ? -1 : 1;
-                    } else {
-                        // Descending: false (0) comes before true (1)
-                        return (a[sortKey] === b[sortKey]) ? 0 : a[sortKey] ? 1 : -1;
-                    }
-                } else if (typeof a[sortKey] === 'string' && typeof b[sortKey] === 'string') {
-                    // Handle string values for sorting
-                    return asc ? a[sortKey].localeCompare(b[sortKey]) : b[sortKey].localeCompare(a[sortKey]);
-                } else {
-                    // Handle numeric values for sorting
-                    return asc ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
-                }
+                if (typeof a[sortKey] === 'boolean') return asc ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
+                if (typeof a[sortKey] === 'string') return asc ? a[sortKey].localeCompare(b[sortKey]) : b[sortKey].localeCompare(a[sortKey]);
+                return asc ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
             });
-    
-            renderTable(problemsData);
-            updateDataJson(problemsData);
+
+            renderTable();
+            updateDataJson(); // Persist sorted data
         }));
     }
-    
 
     function addHoverListeners() {
-        const statusCells = document.querySelectorAll('.table td:nth-child(2), .table td:nth-child(3), .table td:nth-child(4)');
-        statusCells.forEach(cell => {
-            cell.addEventListener('mouseenter', function() {
-                this.parentElement.classList.add('hovered-row');
-            });
-            cell.addEventListener('mouseleave', function() {
-                this.parentElement.classList.remove('hovered-row');
-            });
-        });
+        tableBody.addEventListener('mouseenter', function(event) {
+            if (event.target.tagName === 'TD') {
+                event.target.parentElement.classList.add('hovered-row');
+            }
+        }, true);
+
+        tableBody.addEventListener('mouseleave', function(event) {
+            if (event.target.tagName === 'TD') {
+                event.target.parentElement.classList.remove('hovered-row');
+            }
+        }, true);
     }
 
     function addPartClickListeners() {
         const part1 = document.querySelector('.header-name .part1');
         const part2 = document.querySelector('.header-name .part2');
-    
+
         part1.addEventListener('click', function () {
             const asc = this.asc = !this.asc;
-            problemsData.sort((a, b) => {
-                return asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
-            });
-    
-            renderTable(problemsData);
+            problemsData.sort((a, b) => asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
+            renderTable();
         });
-    
+
         part2.addEventListener('click', function () {
             const asc = this.asc = !this.asc;
-            problemsData.sort((a, b) => {
-                const difficultyOrder = {
-                    'Easy': 1,
-                    'Medium': 2,
-                    'Hard': 3
-                };
-                const aValue = difficultyOrder[a.difficulty] || 0;
-                const bValue = difficultyOrder[b.difficulty] || 0;
-                return asc ? aValue - bValue : bValue - aValue;
-            });
-            renderTable(problemsData);
+            const difficultyOrder = { 'Easy': 1, 'Medium': 2, 'Hard': 3 };
+            problemsData.sort((a, b) => asc ? difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty] : difficultyOrder[b.difficulty] - difficultyOrder[a.difficulty]);
+            renderTable();
         });
     }
 
-    function updateProgress(progressBar, questionsDone){
-        value = ((questionsDone/problemsData.length)*100); // currently 125?
-        console.log(`Number of problems: ${problemsData.length}, value: ${value}`);
-        progressBar.querySelector(".progress-fill").style.width = `${value}%`;
-        progressBar.querySelector(".progress-text").textContent = questionsDone;
-    }
+    fetchData();
 });

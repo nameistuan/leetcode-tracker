@@ -3,7 +3,7 @@ Valid Anagram
 Two Sum   	
 Group Anagrams   	
 Top K Frequent Elements   	
-Encode and Decode Strings   	
+String Compression
 Product of Array Except Self   	
 Valid Sudoku   	
 Longest Consecutive Sequence

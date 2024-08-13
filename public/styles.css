@@ -104,6 +104,7 @@ h1 {
     color: #4abaff;
 }
 
+/* Progress container styles */
 .progress-container {
     display: flex;
     flex-direction: column;
@@ -116,25 +117,32 @@ h1 {
 .progress {
     background: transparent;
     position: relative;
+    width: 100%;  /* Ensure the progress bar takes full width */
+    max-width: 800px; /* Set a max width for better control */
     height: 30px;
     border: 2px solid #07f985;
     border-radius: 50px;
     overflow: hidden;
 }
 
+/* Progress fill styles */
 .progress-fill {
     width: 0;
     height: 100%;
     background-color: #07f985;
+    transition: width 0.5s ease; /* Add a smooth transition for the width change */
 }
 
+/* Progress text styles */
 .progress-text {
     position: absolute;
     font-weight: 700;
     top: 50%;
     right: 5px;
-    transform: translateY(-60%);
+    transform: translateY(-40%);
+    color: #07f985;
 }
+
 
 .daily-container {
     display: flex;
@@ -222,3 +230,8 @@ h1 {
     color: var(--hot-pink);
     cursor: pointer;
 }
+/* Highlight row */
+.highlight-row {
+    background-color: #fee698; /* Light yellow background color */
+}
+

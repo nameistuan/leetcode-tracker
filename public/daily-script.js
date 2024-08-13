@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
 
+    // Global variable to store the current day count
+    let currentDayCount = daysPassed + 1 + dayOffset;
+
     let problemsData = [];
     let database = [];
 
@@ -35,12 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 database = data;
                 console.log('data.json:', database); // Log data.json data
-                loadPlannedProblems(daysPassed + 1 + dayOffset, problemsData, database);
+                loadPlannedProblems(currentDayCount, problemsData, database);
             })
             .catch(error => console.error('Error loading JSON data:', error));
     }
     
-
     function formatDate(date) {
         const month = date.getMonth() + 1;
         const day = date.getDate();
@@ -49,13 +51,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadPlannedProblems(currentDay, problemsData, database) {
+        currentDayCount = currentDay; // Update the global variable
+
         const plannedProblems = problemsData.find(dayData => dayData.day === currentDay)?.problems || [];
         plannedProblemsContainer.innerHTML = ''; // Clear existing problems
-        dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
+        dailyCountElement.textContent = `day ${currentDay}`;
 
         // Calculate and display the current date
         const tempDate = new Date(startDate);
-        tempDate.setDate(startDate.getDate() + daysPassed + dayOffset);
+        tempDate.setDate(startDate.getDate() + currentDay - 1);
         currDate.textContent = formatDate(tempDate);
 
         // Add problems from daily.json to today's problems
@@ -79,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+
+        // Trigger an event to re-render the table with highlighted problems
+        document.dispatchEvent(new CustomEvent('dayChanged', { detail: currentDayCount }));
     }
 
     // Arrow listeners
