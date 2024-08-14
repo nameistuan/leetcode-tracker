@@ -133,15 +133,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function triggerConfetti(element) {
-        const rect = element.getBoundingClientRect();
-        const x = (rect.left + rect.width / 2) / window.innerWidth;
-        const y = (rect.top + rect.height / 2) / window.innerHeight;
-
-        confetti({
-            particleCount: 300,
-            spread: 150,
-            origin: { x, y },
-        });
+        for (let i = 0; i < 5; i++) {
+            const x = Math.random();
+            const y = Math.random();
+        
+            confetti({
+                particleCount: 400,
+                spread: 360, // Full circle spread
+                angle: 90, // Explosion outward
+                origin: { x, y },
+            });
+        }
     }
 
     function addSortingEventListeners() {

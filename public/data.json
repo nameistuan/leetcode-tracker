@@ -100,8 +100,8 @@
     "difficulty": "Medium",
     "topic": "Array, Two Pointers",
     "url": "https://leetcode.com/problems/container-with-most-water/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Trapping Rain Water",
