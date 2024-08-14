@@ -138,8 +138,8 @@ h1 {
     position: absolute;
     font-weight: 700;
     top: 50%;
-    right: 5px;
-    transform: translateY(-40%);
+    right: 8px;
+    transform: translateY(-45%);
     color: #07f985;
 }
 
