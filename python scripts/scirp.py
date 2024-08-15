@@ -22,4 +22,4 @@ def generate_json_from_txt(txt_file_path, output_json_file):
         json.dump(day_problem_list, json_file, indent=2)
 
 # Example usage
-generate_json_from_txt(r'C:\Users\Tuan Le\OneDrive\Desktop\code projects\leetcode-tracker\newprob.txt', r'C:\Users\Tuan Le\OneDrive\Desktop\code projects\leetcode-tracker\daily2.json')
+generate_json_from_txt(r'C:\Users\Tuan Le\OneDrive\Desktop\code projects\leetcode-tracker\public\newprob.txt', r'C:\Users\Tuan Le\OneDrive\Desktop\code projects\leetcode-tracker\final-daily.json')

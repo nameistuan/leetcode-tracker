@@ -1,51 +1,87 @@
 [
   {
     "day": 1,
-    "problems": ["Contains Duplicate", "Valid Anagram"]
+    "problems": [
+      "Contains Duplicate",
+      "Valid Anagram"
+    ]
   },
   {
     "day": 2,
-    "problems": ["Two Sum", "Group Anagrams"]
+    "problems": [
+      "Two Sum",
+      "Group Anagrams"
+    ]
   },
   {
     "day": 3,
-    "problems": ["Top K Frequent Elements", "String Compression"]
+    "problems": [
+      "Top K Frequent Elements",
+      "String Compression"
+    ]
   },
   {
     "day": 4,
-    "problems": ["Product of Array Except Self", "Valid Sudoku"]
+    "problems": [
+      "Product of Array Except Self",
+      "Valid Sudoku"
+    ]
   },
   {
     "day": 5,
-    "problems": ["Longest Consecutive Sequence", "Valid Palindrome"]
+    "problems": [
+      "Longest Consecutive Sequence",
+      "Valid Palindrome"
+    ]
   },
   {
     "day": 6,
-    "problems": ["Two Sum II Input Array Is Sorted", "3Sum"]
+    "problems": [
+      "Two Sum II Input Array Is Sorted",
+      "3Sum"
+    ]
   },
   {
     "day": 7,
-    "problems": ["Container With Most Water", "Trapping Rain Water"]
+    "problems": [
+      "Container With Most Water",
+      "Trapping Rain Water"
+    ]
   },
   {
     "day": 8,
-    "problems": ["Valid Parentheses", "Min Stack"]
+    "problems": [
+      "Valid Parentheses",
+      "Min Stack"
+    ]
   },
   {
     "day": 9,
-    "problems": ["Evaluate Reverse Polish Notation", "Generate Parentheses"]
+    "problems": [
+      "Evaluate Reverse Polish Notation",
+      "Generate Parentheses"
+    ]
   },
   {
     "day": 10,
-    "problems": ["Daily Temperatures", "Car Fleet"]
+    "problems": [
+      "Daily Temperatures",
+      "Car Fleet"
+    ]
   },
   {
     "day": 11,
-    "problems": ["Largest Rectangle In Histogram", "Binary Search"]
+    "problems": [
+      "Largest Rectangle In Histogram",
+      "Binary Search"
+    ]
   },
   {
     "day": 12,
-    "problems": ["Search a 2D Matrix", "Koko Eating Bananas"]
+    "problems": [
+      "Search a 2D Matrix",
+      "Koko Eating Bananas"
+    ]
   },
   {
     "day": 13,
@@ -56,7 +92,10 @@
   },
   {
     "day": 14,
-    "problems": ["Time Based Key Value Store", "Median of Two Sorted Arrays"]
+    "problems": [
+      "Time Based Key Value Store",
+      "Median of Two Sorted Arrays"
+    ]
   },
   {
     "day": 15,
@@ -74,39 +113,66 @@
   },
   {
     "day": 17,
-    "problems": ["Minimum Window Substring", "Sliding Window Maximum"]
+    "problems": [
+      "Minimum Window Substring",
+      "Sliding Window Maximum"
+    ]
   },
   {
     "day": 18,
-    "problems": ["Reverse Linked List", "Merge Two Sorted Lists"]
+    "problems": [
+      "Reverse Linked List",
+      "Merge Two Sorted Lists"
+    ]
   },
   {
     "day": 19,
-    "problems": ["Reorder List", "Remove Nth Node From End of List"]
+    "problems": [
+      "Reorder List",
+      "Remove Nth Node From End of List"
+    ]
   },
   {
     "day": 20,
-    "problems": ["Copy List With Random Pointer", "Add Two Numbers"]
+    "problems": [
+      "Copy List With Random Pointer",
+      "Add Two Numbers"
+    ]
   },
   {
     "day": 21,
-    "problems": ["Linked List Cycle", "Find The Duplicate Number"]
+    "problems": [
+      "Linked List Cycle",
+      "Find The Duplicate Number"
+    ]
   },
   {
     "day": 22,
-    "problems": ["LRU Cache", "Merge K Sorted Lists"]
+    "problems": [
+      "LRU Cache",
+      "Merge K Sorted Lists"
+    ]
   },
   {
     "day": 23,
-    "problems": ["Reverse Nodes In K Group", "Invert Binary Tree"]
+    "problems": [
+      "Reverse Nodes In K Group",
+      "Invert Binary Tree"
+    ]
   },
   {
     "day": 24,
-    "problems": ["Maximum Depth of Binary Tree", "Diameter of Binary Tree"]
+    "problems": [
+      "Maximum Depth of Binary Tree",
+      "Diameter of Binary Tree"
+    ]
   },
   {
     "day": 25,
-    "problems": ["Balanced Binary Tree", "Same Tree"]
+    "problems": [
+      "Balanced Binary Tree",
+      "Same Tree"
+    ]
   },
   {
     "day": 26,
@@ -145,15 +211,24 @@
   },
   {
     "day": 31,
-    "problems": ["Subsets", "Combination Sum"]
+    "problems": [
+      "Subsets",
+      "Combination Sum"
+    ]
   },
   {
     "day": 32,
-    "problems": ["Permutations", "Subsets II"]
+    "problems": [
+      "Permutations",
+      "Subsets II"
+    ]
   },
   {
     "day": 33,
-    "problems": ["Combination Sum II", "Word Search"]
+    "problems": [
+      "Combination Sum II",
+      "Word Search"
+    ]
   },
   {
     "day": 34,
@@ -164,15 +239,24 @@
   },
   {
     "day": 35,
-    "problems": ["N Queens", "Implement Trie Prefix Tree"]
+    "problems": [
+      "N Queens",
+      "Implement Trie Prefix Tree"
+    ]
   },
   {
     "day": 36,
-    "problems": ["Design Add And Search Words Data Structure", "Word Search II"]
+    "problems": [
+      "Design Add And Search Words Data Structure",
+      "Word Search II"
+    ]
   },
   {
     "day": 37,
-    "problems": ["Kth Largest Element In a Stream", "Last Stone Weight"]
+    "problems": [
+      "Kth Largest Element In a Stream",
+      "Last Stone Weight"
+    ]
   },
   {
     "day": 38,
@@ -183,156 +267,254 @@
   },
   {
     "day": 39,
-    "problems": ["Task Scheduler", "Design Twitter"]
+    "problems": [
+      "Task Scheduler",
+      "Design Twitter"
+    ]
   },
   {
     "day": 40,
-    "problems": ["Find Median From Data Stream", "Number of Islands"]
+    "problems": [
+      "Find Median From Data Stream",
+      "Number of Islands"
+    ]
   },
   {
     "day": 41,
-    "problems": ["Max Area of Island", "Clone Graph"]
+    "problems": [
+      "Max Area of Island",
+      "Clone Graph"
+    ]
   },
   {
     "day": 42,
-    "problems": ["Walls And Gates", "Rotting Oranges"]
+    "problems": [
+      "Nearest Exit from Entrance in Maze",
+      "Rotting Oranges"
+    ]
   },
   {
     "day": 43,
-    "problems": ["Pacific Atlantic Water Flow", "Surrounded Regions"]
+    "problems": [
+      "Pacific Atlantic Water Flow",
+      "Surrounded Regions"
+    ]
   },
   {
     "day": 44,
-    "problems": ["Course Schedule", "Course Schedule II"]
+    "problems": [
+      "Course Schedule",
+      "Course Schedule II"
+    ]
   },
   {
     "day": 45,
     "problems": [
-      "Graph Valid Tree",
-      "Number of Connected Components In An Undirected Graph"
+      "Find if Path Exists in Graph",
+      "Redundant Connection"
     ]
   },
   {
     "day": 46,
-    "problems": ["Redundant Connection", "Word Ladder"]
+    "problems": [
+      "Word Ladder",
+      "Climbing Stairs"
+    ]
   },
   {
     "day": 47,
-    "problems": ["Climbing Stairs", "Min Cost Climbing Stairs"]
+    "problems": [
+      "Min Cost Climbing Stairs",
+      "House Robber"
+    ]
   },
   {
     "day": 48,
-    "problems": ["House Robber", "House Robber II"]
+    "problems": [
+      "House Robber II",
+      "Longest Palindromic Substring"
+    ]
   },
   {
     "day": 49,
-    "problems": ["Longest Palindromic Substring", "Palindromic Substrings"]
+    "problems": [
+      "Palindromic Substrings",
+      "Decode Ways"
+    ]
   },
   {
     "day": 50,
-    "problems": ["Decode Ways", "Coin Change"]
+    "problems": [
+      "Coin Change",
+      "Maximum Product Subarray"
+    ]
   },
   {
     "day": 51,
-    "problems": ["Maximum Product Subarray", "Word Break"]
+    "problems": [
+      "Word Break",
+      "Longest Increasing Subsequence"
+    ]
   },
   {
     "day": 52,
-    "problems": ["Longest Increasing Subsequence", "Partition Equal Subset Sum"]
+    "problems": [
+      "Partition Equal Subset Sum",
+      "Meeting Rooms"
+    ]
   },
   {
     "day": 53,
-    "problems": ["Meeting Rooms", "Insert Interval"]
+    "problems": [
+      "Insert Interval",
+      "Merge Intervals"
+    ]
   },
   {
     "day": 54,
-    "problems": ["Merge Intervals", "Non Overlapping Intervals"]
+    "problems": [
+      "Non Overlapping Intervals",
+      "Interval List Intersections"
+    ]
   },
   {
     "day": 55,
-    "problems": ["Meeting Rooms II", "Minimum Interval to Include Each Query"]
+    "problems": [
+      "Minimum Interval to Include Each Query",
+      "Maximum Subarray"
+    ]
   },
   {
     "day": 56,
-    "problems": ["Maximum Subarray", "Jump Game"]
+    "problems": [
+      "Jump Game",
+      "Jump Game II"
+    ]
   },
   {
     "day": 57,
-    "problems": ["Jump Game II", "Gas Station"]
+    "problems": [
+      "Gas Station",
+      "Hand of Straights"
+    ]
   },
   {
     "day": 58,
-    "problems": ["Hand of Straights", "Merge Triplets to Form Target Triplet"]
+    "problems": [
+      "Merge Triplets to Form Target Triplet",
+      "Partition Labels"
+    ]
   },
   {
     "day": 59,
-    "problems": ["Partition Labels", "Valid Parenthesis String"]
+    "problems": [
+      "Valid Parenthesis String",
+      "Reconstruct Itinerary"
+    ]
   },
   {
     "day": 60,
-    "problems": ["Reconstruct Itinerary", "Min Cost to Connect All Points"]
+    "problems": [
+      "Min Cost to Connect All Points",
+      "Network Delay Time"
+    ]
   },
   {
     "day": 61,
-    "problems": ["Network Delay Time", "Swim In Rising Water"]
+    "problems": [
+      "Swim In Rising Water",
+      "Cheapest Flights Within K Stops"
+    ]
   },
   {
     "day": 62,
-    "problems": ["Alien Dictionary", "Cheapest Flights Within K Stops"]
+    "problems": [
+      "Unique Paths",
+      "Longest Common Subsequence"
+    ]
   },
   {
     "day": 63,
-    "problems": ["Unique Paths", "Longest Common Subsequence"]
-  },
-  {
-    "day": 64,
     "problems": [
       "Best Time to Buy And Sell Stock With Cooldown",
       "Coin Change II"
     ]
   },
   {
+    "day": 64,
+    "problems": [
+      "Target Sum",
+      "Interleaving String"
+    ]
+  },
+  {
     "day": 65,
-    "problems": ["Target Sum", "Interleaving String"]
+    "problems": [
+      "Edit Distance",
+      "Longest Increasing Path In a Matrix"
+    ]
   },
   {
     "day": 66,
-    "problems": ["Edit Distance", "Longest Increasing Path In a Matrix"]
+    "problems": [
+      "Distinct Subsequences",
+      "Burst Balloons"
+    ]
   },
   {
     "day": 67,
-    "problems": ["Distinct Subsequences", "Burst Balloons"]
+    "problems": [
+      "Regular Expression Matching",
+      "Single Number"
+    ]
   },
   {
     "day": 68,
-    "problems": ["Regular Expression Matching", "Single Number"]
+    "problems": [
+      "Number of 1 Bits",
+      "Counting Bits"
+    ]
   },
   {
     "day": 69,
-    "problems": ["Number of 1 Bits", "Counting Bits"]
+    "problems": [
+      "Reverse Bits",
+      "Missing Number"
+    ]
   },
   {
     "day": 70,
-    "problems": ["Reverse Bits", "Missing Number"]
+    "problems": [
+      "Sum of Two Integers",
+      "Reverse Integer"
+    ]
   },
   {
     "day": 71,
-    "problems": ["Sum of Two Integers", "Reverse Integer"]
+    "problems": [
+      "Rotate Image",
+      "Spiral Matrix"
+    ]
   },
   {
     "day": 72,
-    "problems": ["Rotate Image", "Spiral Matrix"]
+    "problems": [
+      "Set Matrix Zeroes",
+      "Happy Number"
+    ]
   },
   {
     "day": 73,
-    "problems": ["Set Matrix Zeroes", "Happy Number"]
+    "problems": [
+      "Plus One",
+      "Pow(x, n)"
+    ]
   },
   {
     "day": 74,
-    "problems": ["Plus One", "Pow(x, n)"]
-  },
-  {
-    "day": 75,
-    "problems": ["Multiply Strings", "Detect Squares"]
+    "problems": [
+      "Multiply Strings",
+      "Detect Squares"
+    ]
   }
 ]

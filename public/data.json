@@ -65,7 +65,7 @@
   },
   {
     "name": "Longest Consecutive Sequence",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Array, Hash Table",
     "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
     "completed": false,
@@ -121,7 +121,7 @@
   },
   {
     "name": "Min Stack",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "topic": "Design, Stack",
     "url": "https://leetcode.com/problems/min-stack/",
     "completed": false,
@@ -209,7 +209,7 @@
   },
   {
     "name": "Time Based Key Value Store",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Design",
     "url": "https://leetcode.com/problems/time-based-key-value-store/",
     "completed": false,
@@ -241,7 +241,7 @@
   },
   {
     "name": "Longest Repeating Character Replacement",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "String",
     "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
     "completed": false,
@@ -409,7 +409,7 @@
   },
   {
     "name": "Lowest Common Ancestor of a Binary Search Tree",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "topic": "Tree, Binary Search Tree",
     "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
     "completed": false,
@@ -609,7 +609,7 @@
   },
   {
     "name": "Task Scheduler",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Greedy",
     "url": "https://leetcode.com/problems/task-scheduler/",
     "completed": false,
@@ -617,7 +617,7 @@
   },
   {
     "name": "Design Twitter",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Design",
     "url": "https://leetcode.com/problems/design-twitter/",
     "completed": false,
@@ -656,10 +656,10 @@
     "confidence": 1
   },
   {
-    "name": "Walls And Gates",
+    "name": "Nearest Exit from Entrance in Maze",
     "difficulty": "Medium",
-    "topic": "DFS/BFS",
-    "url": "https://leetcode.com/problems/walls-and-gates/",
+    "topic": "BFS",
+    "url": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
     "completed": false,
     "confidence": 1
   },
@@ -704,18 +704,10 @@
     "confidence": 1
   },
   {
-    "name": "Graph Valid Tree",
-    "difficulty": "Medium",
-    "topic": "Graph, Union Find",
-    "url": "https://leetcode.com/problems/graph-valid-tree/",
-    "completed": false,
-    "confidence": 1
-  },
-  {
-    "name": "Number of Connected Components In An Undirected Graph",
-    "difficulty": "Medium",
+    "name": "Find if Path Exists in Graph",
+    "difficulty": "Easy",
     "topic": "Graph",
-    "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+    "url": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
     "completed": false,
     "confidence": 1
   },
@@ -841,7 +833,7 @@
   },
   {
     "name": "Insert Interval",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Array, Sort",
     "url": "https://leetcode.com/problems/insert-interval/",
     "completed": false,
@@ -864,10 +856,10 @@
     "confidence": 1
   },
   {
-    "name": "Meeting Rooms II",
+    "name": "Interval List Intersections",
     "difficulty": "Medium",
-    "topic": "Array, Heap, Intervals",
-    "url": "https://leetcode.com/problems/meeting-rooms-ii/",
+    "topic": "Intervals",
+    "url": "https://leetcode.com/problems/interval-list-intersections/",
     "completed": false,
     "confidence": 1
   },
@@ -881,7 +873,7 @@
   },
   {
     "name": "Maximum Subarray",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "topic": "Array, Dynamic Programming",
     "url": "https://leetcode.com/problems/maximum-subarray/",
     "completed": false,
@@ -953,7 +945,7 @@
   },
   {
     "name": "Min Cost to Connect All Points",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Graph, Kruskal's Algorithm",
     "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
     "completed": false,
@@ -972,14 +964,6 @@
     "difficulty": "Hard",
     "topic": "Binary Search",
     "url": "https://leetcode.com/problems/swim-in-rising-water/",
-    "completed": false,
-    "confidence": 1
-  },
-  {
-    "name": "Alien Dictionary",
-    "difficulty": "Hard",
-    "topic": "Graph, Topological Sort",
-    "url": "https://leetcode.com/problems/alien-dictionary/",
     "completed": false,
     "confidence": 1
   },
@@ -1033,7 +1017,7 @@
   },
   {
     "name": "Interleaving String",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Dynamic Programming, String",
     "url": "https://leetcode.com/problems/interleaving-string/",
     "completed": false,
@@ -1041,7 +1025,7 @@
   },
   {
     "name": "Edit Distance",
-    "difficulty": "Hard",
+    "difficulty": "Medium",
     "topic": "Dynamic Programming",
     "url": "https://leetcode.com/problems/edit-distance/",
     "completed": false,
@@ -1121,7 +1105,7 @@
   },
   {
     "name": "Sum of Two Integers",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "topic": "Bit Manipulation",
     "url": "https://leetcode.com/problems/sum-of-two-integers/",
     "completed": false,
@@ -1129,7 +1113,7 @@
   },
   {
     "name": "Reverse Integer",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "topic": "Math",
     "url": "https://leetcode.com/problems/reverse-integer/",
     "completed": false,

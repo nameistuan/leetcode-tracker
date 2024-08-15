@@ -80,14 +80,13 @@ Find Median From Data Stream
 Number of Islands   	
 Max Area of Island   	
 Clone Graph   	
-Walls And Gates   	
+Nearest Exit from Entrance in Maze   	
 Rotting Oranges   	
 Pacific Atlantic Water Flow   	
 Surrounded Regions   	
 Course Schedule   	
 Course Schedule II   	
-Graph Valid Tree   	
-Number of Connected Components In An Undirected Graph   	
+Find if Path Exists in Graph   	
 Redundant Connection   	
 Word Ladder   
 Climbing Stairs   	
@@ -106,7 +105,7 @@ Meeting Rooms
 Insert Interval   	
 Merge Intervals   	
 Non Overlapping Intervals   	
-Meeting Rooms II   	
+Interval List Intersections   	
 Minimum Interval to Include Each Query   	
 Maximum Subarray   	
 Jump Game   	
@@ -120,7 +119,6 @@ Reconstruct Itinerary
 Min Cost to Connect All Points   	
 Network Delay Time   	
 Swim In Rising Water   	
-Alien Dictionary   	
 Cheapest Flights Within K Stops   
 Unique Paths   	
 Longest Common Subsequence   	
