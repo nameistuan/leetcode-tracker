@@ -118,7 +118,7 @@ h1 {
     background: transparent;
     position: relative;
     width: 100%;  /* Ensure the progress bar takes full width */
-    max-width: 800px; /* Set a max width for better control */
+    max-width: 900px; /* Set a max width for better control */
     height: 30px;
     border: 2px solid #07f985;
     border-radius: 50px;
@@ -157,7 +157,7 @@ h1 {
 
 #daily-count {
     color: #333;
-    font-size: 300px;
+    font-size: 150px;
     padding-left: 0; /* Remove left padding */
     border-radius: 10px;
 }
@@ -171,7 +171,7 @@ h1 {
 .arrow-buttons {
     cursor: pointer;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 500;
     user-select: none;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -183,7 +183,7 @@ h1 {
 .today-buttons {
     cursor: pointer;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 500;
     user-select: none;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -202,8 +202,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-bottom: 100px;
-    padding-top: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     width: 100%;
 }
 
@@ -222,7 +222,7 @@ h1 {
 
 .planned-container h2 {
     font-size: 60px;
-    margin-top: 130px;
+    margin-top: 50px;
     padding-bottom: 10px;
 }
 

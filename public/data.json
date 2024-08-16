@@ -68,8 +68,8 @@
     "difficulty": "Medium",
     "topic": "Array, Hash Table",
     "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Valid Palindrome",
@@ -116,24 +116,24 @@
     "difficulty": "Easy",
     "topic": "String, Stack",
     "url": "https://leetcode.com/problems/valid-parentheses/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Min Stack",
     "difficulty": "Medium",
     "topic": "Design, Stack",
     "url": "https://leetcode.com/problems/min-stack/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Evaluate Reverse Polish Notation",
     "difficulty": "Medium",
     "topic": "Stack, Math",
     "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
-    "completed": false,
-    "confidence": 1
+    "completed": true,
+    "confidence": 2
   },
   {
     "name": "Generate Parentheses",
