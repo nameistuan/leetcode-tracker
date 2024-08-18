@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dailyCountElement = document.getElementById('daily-count');
     const plannedProblemsContainer = document.getElementById('planned-problems');
     const currDate = document.getElementById('current-date');
+    const headerElement = document.querySelector('.planned-container h2'); // Select the <h2> element
 
     let dayOffset = 0;
 
@@ -61,6 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const tempDate = new Date(startDate);
         tempDate.setDate(startDate.getDate() + currentDay - 1);
         currDate.textContent = formatDate(tempDate);
+
+        // Update the header based on whether it's a review day
+        if (currentDay % 7 === 0) {
+            headerElement.textContent = "review day"; // Set header text for review day
+        } else {
+            headerElement.textContent = "today's problems!"; // Set header text for regular day
+        }
 
         // Add problems from daily.json to today's problems
         if (plannedProblems.length === 0) {

@@ -15,7 +15,6 @@ Trapping Rain Water
 Valid Parentheses   	
 Min Stack   	
 Evaluate Reverse Polish Notation   	
-Generate Parentheses   	
 Daily Temperatures   	
 Car Fleet   	
 Largest Rectangle In Histogram   
@@ -58,6 +57,7 @@ Kth Smallest Element In a Bst
 Construct Binary Tree From Preorder And Inorder Traversal   	
 Binary Tree Maximum Path Sum   	
 Serialize And Deserialize Binary Tree    
+Generate Parentheses   	
 Subsets   	
 Combination Sum   	
 Permutations   	
@@ -146,3 +146,4 @@ Plus One
 Pow(x, n)   	
 Multiply Strings   	
 Detect Squares   
+REVIEW DAY

@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const totalProblems = problemsData.length;
         const questionsDone = problemsData.filter(problem => problem.completed).length;
         const value = ((questionsDone / totalProblems) * 100);
-        console.log(`Progress: ${value}% (${questionsDone}/${totalProblems})`);
+        console.log(`Progress: ${value}% (${questionsDone}/${totalProblems-1})`);
         progressBarFill.style.width = `${value}%`;
         progressText.textContent = questionsDone;
     }

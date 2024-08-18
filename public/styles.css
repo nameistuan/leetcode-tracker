@@ -199,6 +199,7 @@ h1 {
 }
 
 .main-container {
+    height: 362px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -212,6 +213,11 @@ h1 {
     margin: 0 auto; /* Center the container horizontally */
 }
 
+#planned-problems {
+    max-height: 100px; /* Adjust the max-height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
 .planned-container ul {
     font-weight: 500;
     font-size: 30px;
@@ -221,6 +227,7 @@ h1 {
 }
 
 .planned-container h2 {
+    margin-bottom: 20px;
     font-size: 60px;
     margin-top: 50px;
     padding-bottom: 10px;
