@@ -33,7 +33,6 @@ h1 {
     background-color: #fdffff;
     position: sticky; /* Make the container fixed */
     top: 0; /* Stick to the top */
-    z-index: 1000; /* Ensure it stays above other elements */
 }
 
 /* Table Container */
@@ -56,7 +55,6 @@ h1 {
 .table th, .table td {
     text-align: left;
     font-size: larger;
-    border: 2px solid #333;
     padding: 8px;
 }
 
@@ -206,6 +204,18 @@ h1 {
     position: relative; /* Ensure the dot stays in place */
     top: 0; /* Adjust as necessary */
     left: -25px; /* Move to the left of the name */
+}
+
+.header-name .part1:hover{
+    color: #d675ff;
+}
+
+.header-name .part2:hover{
+    color: #d675ff;
+}
+
+.header-3:hover{
+    color: #d675ff;
 }
 
 .header-dot:hover {
