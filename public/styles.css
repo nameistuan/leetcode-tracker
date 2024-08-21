@@ -1,15 +1,18 @@
 body {
     font-family: 'VistaSansOT-Bold', sans-serif;
-    src: url('public\VistaSansOT-Bold.ttf');
+    src: url('public/VistaSansOT-Bold.ttf');
     background-color: #fdffff;
     color: #333;
     text-align: center;
-    padding: 30px;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Ensure the body takes full height */
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-    margin: auto;
-    /* padding: 10px; */
+    margin: 0; /* Remove margin */
     font-weight: 900;
     font-size: 100px;
 }
@@ -20,6 +23,175 @@ h1 {
     --hot-pink: #FF69B4;
 }
 
+/* Main Container */
+.main-container {
+    height: 362px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #fdffff;
+    position: sticky; /* Make the container fixed */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Table Container */
+.table-container {
+    flex-grow: 1; /* Allow the table container to take up remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+    width: 100%; /* Full width */
+    max-width: 97%; /* Optional: set a max width for the table */
+    padding: 10px; /* Add padding for better spacing */
+}
+
+/* Table Styles */
+.table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    text-align: left;
+    font-size: larger;
+    border: 2px solid #333;
+    padding: 8px;
+}
+
+.table td {
+    font-weight: 400;
+}
+
+.table a {
+    color: #333;
+    text-decoration: none;
+}
+
+.table a:hover {
+    color: #4abaff;
+}
+
+.table .hovered-row {
+    background-color: #dcdbdb;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    justify-content: center;
+}
+
+.progress {
+    background: transparent;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 30px;
+    border: 2px solid #07f985;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: #07f985;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    font-weight: 700;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-45%);
+    color: #07f985;
+}
+
+/* Daily Container Styles */
+.daily-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    justify-content: center;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+
+.planned-container {
+    width: 80%; /* Ensure it takes the same width as .daily-container */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center the content inside the container */
+}
+
+#planned-problems {
+    max-height: 100px; /* Adjust the max-height as needed */
+    max-width: 600px; /* Set the maximum width for the list */
+    margin: 0 auto; /* Center the list within its container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove bullet points */
+}
+
+
+/* Arrow and Button Styles */
+.arrows-container {
+    display: flex;
+    gap: 30px;
+}
+
+.arrow-buttons, .today-buttons {
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.arrow-buttons {
+    font-size: 40px;
+}
+
+.arrow-buttons:hover, .today-buttons:hover {
+    color: orange;
+}
+
+.current-date-container {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Planned Problems Styles */
+.planned-container ul {
+    font-weight: 500;
+    font-size: 30px;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.planned-container h2 {
+    font-weight: 800;
+    margin: 50px 0 20px;
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+
+.planned-container li:hover {
+    color: var(--hot-pink);
+    cursor: pointer;
+}
+
+/* Dots for difficulty levels */
 .dot, .header-dot {
     display: inline-block;
     width: 10px;
@@ -52,193 +224,7 @@ h1 {
     background-color: #ff3131;
 }
 
-.table-container {
-    position: relative; /* Ensure table container is positioned */
-    margin: 0 auto; /* Center the table horizontally */
-}
-
-.table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.table th, .table td {
-    text-align: left;
-    font-size: larger;
-    border-style: solid;
-    border: 2px;
-    padding: 8px;
-}
-
-.table td {
-    font-weight: 400;
-}
-
-.table a {
-    color: #333;
-    text-decoration: none; 
-}
-
-.table a:hover {
-    color: #4abaff;
-}
-
-.header-3:hover{
-    color: #d675ff;
-}
-
-.table .hovered-row {
-    background-color: var(--bright-orange);
-}
-
-.header-name span {
-    cursor: pointer;
-}
-
-.header-name .part1:hover{
-    color: var(--bright-orange);
-}
-
-.header-name .part2:hover{
-    color: #4abaff;
-}
-
-/* Progress container styles */
-.progress-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 200px;
-    justify-content: center;
-}
-
-/* Progress bar styles */
-.progress {
-    background: transparent;
-    position: relative;
-    width: 100%;  /* Ensure the progress bar takes full width */
-    max-width: 900px; /* Set a max width for better control */
-    height: 30px;
-    border: 2px solid #07f985;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-/* Progress fill styles */
-.progress-fill {
-    width: 0;
-    height: 100%;
-    background-color: #07f985;
-    transition: width 0.5s ease; /* Add a smooth transition for the width change */
-}
-
-/* Progress text styles */
-.progress-text {
-    position: absolute;
-    font-weight: 700;
-    top: 50%;
-    right: 8px;
-    transform: translateY(-45%);
-    color: #07f985;
-}
-
-
-.daily-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center child elements horizontally */
-    justify-content: center; /* Center child elements vertically */
-    padding-bottom: 50px;
-    width: 80%; /* Set the same width as .planned-container */
-    text-align: center; /* Center text within child elements */
-    margin: 0 auto; /* Center the container horizontally */
-}
-
-#daily-count {
-    color: #333;
-    font-size: 150px;
-    padding-left: 0; /* Remove left padding */
-    border-radius: 10px;
-}
-
-.arrows-container {
-    display: flex;
-    gap: 30px;
-    padding-left: 0; /* Remove left padding */
-}
-
-.arrow-buttons {
-    cursor: pointer;
-    font-size: 40px;
-    font-weight: 500;
-    user-select: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.arrow-buttons:hover{
-    color: orange;
-}
-
-.today-buttons {
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 500;
-    user-select: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.today-buttons:hover{
-    color: orange;
-}
-
-.current-date-container {
-    font-size: 30px;
-    font-weight: 700;
-    padding-left: 0; /* Remove left padding */
-}
-
-.main-container {
-    height: 362px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    width: 100%;
-}
-
-.planned-container {
-    width: 80%; /* Ensure it takes the same width as .daily-container */
-    margin: 0 auto; /* Center the container horizontally */
-}
-
-#planned-problems {
-    max-height: 100px; /* Adjust the max-height as needed */
-    overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.planned-container ul {
-    font-weight: 500;
-    font-size: 30px;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-}
-
-.planned-container h2 {
-    margin-bottom: 20px;
-    font-size: 60px;
-    margin-top: 50px;
-    padding-bottom: 10px;
-}
-
-.planned-container li:hover {
-    color: var(--hot-pink);
-    cursor: pointer;
-}
-/* Highlight row */
+/* Highlight Row */
 .highlight-row {
-    background-color: #fee698; /* Light yellow background color */
+    background-color: #ffe5b4;
 }
-

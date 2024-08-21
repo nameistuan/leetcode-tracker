@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const timeDifference = today - startDate;
     const daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-    dailyCountElement.textContent = `day ${daysPassed + 1 + dayOffset}`;
-
     // Global variable to store the current day count
     let currentDayCount = daysPassed + 1 + dayOffset;
 
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Error loading JSON data:', error));
     }
-    
+
     function formatDate(date) {
         const month = date.getMonth() + 1;
         const day = date.getDate();
@@ -51,20 +49,26 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${month < 10 ? '0' + month : month}.${day < 10 ? '0' + day : day}.${year}`;
     }
 
+    function isWeekend(date) {
+        const dayOfWeek = date.getDay();
+        return dayOfWeek === 6 || dayOfWeek === 0; // Saturday (6) or Sunday (0)
+    }
+
     function loadPlannedProblems(currentDay, problemsData, database) {
         currentDayCount = currentDay; // Update the global variable
 
-        const plannedProblems = problemsData.find(dayData => dayData.day === currentDay)?.problems || [];
+        const plannedDayData = problemsData.find(dayData => dayData.day === currentDay);
+        const plannedProblems = plannedDayData?.problems || [];
         plannedProblemsContainer.innerHTML = ''; // Clear existing problems
         dailyCountElement.textContent = `day ${currentDay}`;
 
-        // Calculate and display the current date
-        const tempDate = new Date(startDate);
-        tempDate.setDate(startDate.getDate() + currentDay - 1);
-        currDate.textContent = formatDate(tempDate);
+        // Set the current date
+        const currentDate = new Date(startDate);
+        currentDate.setDate(startDate.getDate() + currentDay - 1);
+        currDate.textContent = formatDate(currentDate);
 
         // Update the header based on whether it's a review day
-        if (currentDay % 7 === 0) {
+        if (isWeekend(currentDate)) {
             headerElement.textContent = "review day"; // Set header text for review day
         } else {
             headerElement.textContent = "today's problems!"; // Set header text for regular day
